@@ -1,16 +1,37 @@
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I am a h1 tag"),
-    React.createElement("h2", {}, "I am a h2 tag"),
-  ]),
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I am a h1 tag"),
-    React.createElement("h2", {}, "I am a h2 tag"),
-  ]),
-]);
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-console.log(parent);
+// Create a nested header element using react.createElement()
+// const header = React.createElement("div", { className: "title" }, [
+//   React.createElement("h1", {}, [
+//     "hi",
+//     React.createElement("h2", {}, [
+//       "hi",
+//       React.createElement("h3", {}, "hi")]),
+//   ]),
+// ]);
+
+//creating
+const header = (
+  <div className="title">
+    <h1>Hi from h1</h1>
+    <h2>Hi from h2</h2>
+    <h3>Hi from h3</h3>
+  </div>
+);
+
+const title = <h1>Hello World</h1>;
+
+const TitleComponent = () => <h1>Hello World</h1>;
+
+// Component composition
+const Headercomponent = () => (
+  <div className="title">
+    <TitleComponent></TitleComponent>
+    <h2>Boom</h2>
+  </div>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+root.render(<Headercomponent />);

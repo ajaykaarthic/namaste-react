@@ -1,3 +1,54 @@
-#child {
-    color: red;
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    border: 1px solid black;
+}
+
+.logo {
+    width: 200px;
+}
+
+.nav-items > ul {
+    display: flex;
+}
+
+.nav-items > ul > li {
+    padding: 10px;
+    margin: 10px;
+    list-style: none;
+    font-size: 20px;
+}
+
+.body {
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border: 1px solid black;
+}
+
+.search {
+ margin: 10px 10px;
+}
+
+.res-container {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+
+.res-card {
+    padding:10px 10px;
+    margin: 5px 5px;
+    width: 200px;
+    background-color: rgb(225, 230, 234);
+    cursor: pointer;
+}
+
+.res-card:hover {
+    border: 1px solid lightslategrey;
+    box-shadow: 1px 1px 5px 3px;
+}
+
+.res-logo {
+    width: 100%;
 }

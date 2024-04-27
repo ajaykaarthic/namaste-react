@@ -1,66 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/**
- * header
- * - icon
- * - navItems
- * - cart
- */
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://penji.co/wp-content/uploads/2022/08/6.-waiter.com-logo.jpg"
-        ></img>
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-/**
- * body
- *  - search
- *  - res-container
- *    - res-card
- *      - img
- *      - name of res, star rating, cusine
- */
-
-const RestaurantCard = (props) => {
-  const { resData } = props;
-  const { cloudinaryImageId, name, avgRating, cuisines, sla } = resData?.info;
-  return (
-    <div className="res-card">
-      <img
-        className="res-logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-      ></img>
-      <h3>{name}</h3>
-      <h4>{avgRating}</h4>
-      <h4>{sla.deliveryTime} Mins</h4>
-      <p>{cuisines.join(", ")}</p>
-    </div>
-  );
-};
-
-const Search = () => {
-  return <div className="search"></div>;
-};
-
 const resList = [
   {
     info: {
@@ -783,28 +720,5 @@ const resList = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
 ];
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resList.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
 
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
+export default resList;
